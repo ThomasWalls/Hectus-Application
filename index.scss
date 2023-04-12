@@ -1,6 +1,21 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    .header-tab {
+        border: 1px solid black;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        background: lightgrey;
+        padding: 10px 0;
+        cursor: pointer;
+    }
 }
 
 .container {

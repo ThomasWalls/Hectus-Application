@@ -13,19 +13,67 @@
 
 <body>
     <div id="header">
-        <div class="header-tab" id="suprise-header">Surprise</div>
-        <div class="header-tab" id="hehe-header">Hehe</div>
-        <div class="header-tab" id="bread-header">bread</div>
+        <div class="header-tab" id="surprise-tab">Surprise</div>
+        <div class="header-tab" id="hehe-tab">Hehe</div>
+        <div class="header-tab" id="bread-tab">bread</div>
     </div>
 
-    <div class="container">
-        <button id="rickroll-btn">Free V-Bucks</button>
-        <video id="rickroll-video" src="./never_gonna_give_you_up.mp4"></video>
+    <div class="tab" id="rickroll-container">
+        <div class="container">
+            <button id="rickroll-btn">Free V-Bucks</button>
+            <video id="rickroll-video" src="./never_gonna_give_you_up.mp4"></video>
+        </div>
+    </div>
+
+    <div class="tab" id="hehe-container">
+        <div class="container">
+            <video id="cat-video" src="./cat_middle_finger.mp4" loop></video>
+        </div>
+    </div>
+
+    <div class="tab" id="bread-container">
+        <div class="container">
+            <video id="bread-video" src="./falling_bread.mp4" loop></video>
+        </div>
     </div>
 </body>
 </html>
 
 <script>
+
+function pause_videos_hide_tabs() {
+    $('video').each(function() {
+        $(this).trigger('pause')
+    })
+    $('.tab').each(function() {
+        $(this).hide()
+    })
+    $('.header-tab').each(function() {
+        $(this).css('background', 'white')
+    })
+    $('#rickroll-video').hide()
+    $('#rickroll-video').get(0).currentTime=0
+}
+
+$('#surprise-tab').click(function() {
+    pause_videos_hide_tabs()
+    $('#rickroll-container').show()
+    $('#rickroll-btn').show()
+    $(this).css('background', 'lightgray')
+})
+$('#hehe-tab').click(function() {
+    pause_videos_hide_tabs()
+    $('#hehe-container').show()
+    $('#cat-video').trigger('play')
+    $(this).css('background', 'lightgray')
+})
+$('#bread-tab').click(function() {
+    pause_videos_hide_tabs()
+    $('#bread-container').show()
+    $('#bread-video').trigger('play')
+    $(this).css('background', 'lightgray')
+})
+$('#surprise-tab').trigger('click')
 
 $('#rickroll-btn').click(function() {
     $(this).hide()

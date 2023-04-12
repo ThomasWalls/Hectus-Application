@@ -1,7 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 58px auto;
 }
 
 #header {
@@ -13,24 +20,28 @@ body {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  background: lightgrey;
   padding: 10px 0;
   cursor: pointer;
 }
 
-.container {
+.tab {
   padding: 0;
   margin: 0;
-  width: 100%;
+}
+.tab .container {
   height: 100%;
+  display: grid;
+  align-items: center;
+  place-items: center;
 }
-.container button, .container video {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.tab .container video {
+  width: 80%;
+  max-width: 800px;
+  max-height: 500px;
+  border-radius: 10px;
 }
-.container button {
+
+#rickroll-container button {
   font-size: 2em;
   background: lime;
   border: none;
@@ -39,9 +50,10 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-.container video {
+#rickroll-container video {
   display: none;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 10px;
+}
+
+#hehe-container, #bread-container {
+  display: none;
 }/*# sourceMappingURL=index.css.map */
